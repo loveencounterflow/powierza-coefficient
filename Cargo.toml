@@ -1,10 +1,10 @@
 [package]
-name = "rustybuzz-wasm"
-version = "4.6.0"
+name = "powierza-coefficient"
+version = "0.0.0"
 authors = ["Your Name <you@example.com>"]
-description = "Typesetting from NodeJS with text shaping, line wrapping, SVG text rendering"
+description = "String similarity algorithms"
 license = "MIT/Apache-2.0"
-repository = "https://github.com/loveencounterflow/rustybuzz-wasm"
+repository = "https://github.com/loveencounterflow/powierza-coefficient"
 edition = "2018"
 
 [lib]
@@ -12,22 +12,13 @@ crate-type = ["cdylib"]
 
 [dependencies]
 powierza-coefficient = "*"
+strsim = "*"
 # acc to https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html
 # thx to https://stackoverflow.com/a/52819347/256361
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.32"
 serde_derive = "1.0.80"
 wasm-bindgen = { version = "0.2", features = ["serde-serialize"] }
-rustybuzz = "0.4"
-ttf-parser = "0.11"
-svgtypes = "0.5"
-# xmlwriter = "0.1" ### TAINT really needed?
-textwrap = { version = "0.13", features = [ "smawk", "hyphenation", "unicode-width", ] }
-hyphenation = "0.8.0"
-# hyphenation = { version = "0.8.4", features = ["embed_all"] }
-regex = "*"
-# flate2 = "1.0"
-html-escape = "0.2.9"
 
 # [dev-dependencies]
 pico-args = "0.3"
