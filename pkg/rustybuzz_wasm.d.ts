@@ -3,9 +3,9 @@
 /**
 * @param {string} a
 * @param {string} b
-* @returns {boolean}
+* @returns {number}
 */
-export function powierza(a: string, b: string): boolean;
+export function powierza(a: string, b: string): number;
 /**
 * @param {number} font_idx
 * @param {string} font_bytes_hex
@@ -16,28 +16,6 @@ export function register_font(font_idx: number, font_bytes_hex: string): void;
 * @returns {boolean}
 */
 export function font_register_is_free(font_idx: number): boolean;
-/**
-* @param {any} user_cfg
-* @returns {string}
-*/
-export function shape_text(user_cfg: any): string;
-/**
-* @param {any} js_font_idx
-* @param {any} js_glyph_id
-* @returns {string}
-*/
-export function glyph_to_svg_pathdata(js_font_idx: any, js_glyph_id: any): string;
-/**
-* @param {any} js_font_idx
-* @returns {string}
-*/
-export function get_font_metrics(js_font_idx: any): string;
-/**
-* @param {any} slabs_js
-* @param {any} line_width_js
-* @returns {string}
-*/
-export function wrap_text_with_arbitrary_slabs(slabs_js: any, line_width_js: any): string;
 /**
 * @param {string} text
 * @returns {string}

@@ -1,20 +1,20 @@
 {
-  "name": "rustybuzz-wasm",
+  "name": "powierza-coefficient",
   "collaborators": [
     "Your Name <you@example.com>"
   ],
-  "description": "Typesetting from NodeJS with text shaping, line wrapping, SVG text rendering",
-  "version": "4.6.0",
+  "description": "String similarity algorithms",
+  "version": "0.0.0",
   "license": "MIT/Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/loveencounterflow/rustybuzz-wasm"
+    "url": "https://github.com/loveencounterflow/powierza-coefficient"
   },
   "files": [
-    "rustybuzz_wasm_bg.wasm",
-    "rustybuzz_wasm.js",
-    "rustybuzz_wasm.d.ts"
+    "powierza_coefficient_bg.wasm",
+    "powierza_coefficient.js",
+    "powierza_coefficient.d.ts"
   ],
-  "main": "rustybuzz_wasm.js",
-  "types": "rustybuzz_wasm.d.ts"
+  "main": "powierza_coefficient.js",
+  "types": "powierza_coefficient.d.ts"
 }
