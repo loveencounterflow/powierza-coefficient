@@ -11,6 +11,7 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
+powierza-coefficient = "*"
 # acc to https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html
 # thx to https://stackoverflow.com/a/52819347/256361
 serde = { version = "1.0", features = ["derive"] }
@@ -24,7 +25,7 @@ svgtypes = "0.5"
 textwrap = { version = "0.13", features = [ "smawk", "hyphenation", "unicode-width", ] }
 hyphenation = "0.8.0"
 # hyphenation = { version = "0.8.4", features = ["embed_all"] }
-regex ="*"
+regex = "*"
 # flate2 = "1.0"
 html-escape = "0.2.9"
 
