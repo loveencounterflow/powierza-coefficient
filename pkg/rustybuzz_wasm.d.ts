@@ -1,6 +1,12 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+* @param {string} a
+* @param {string} b
+* @returns {boolean}
+*/
+export function powierza(a: string, b: string): boolean;
+/**
 * @param {number} font_idx
 * @param {string} font_bytes_hex
 */

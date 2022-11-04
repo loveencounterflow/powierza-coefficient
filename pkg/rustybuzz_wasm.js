@@ -9,20 +9,6 @@ heap.push(undefined, null, true, false);
 
 function getObject(idx) { return heap[idx]; }
 
-let heap_next = heap.length;
-
-function dropObject(idx) {
-    if (idx < 36) return;
-    heap[idx] = heap_next;
-    heap_next = idx;
-}
-
-function takeObject(idx) {
-    const ret = getObject(idx);
-    dropObject(idx);
-    return ret;
-}
-
 let WASM_VECTOR_LEN = 0;
 
 let cachedUint8Memory0 = new Uint8Array();
@@ -98,6 +84,20 @@ function getInt32Memory0() {
     return cachedInt32Memory0;
 }
 
+let heap_next = heap.length;
+
+function dropObject(idx) {
+    if (idx < 36) return;
+    heap[idx] = heap_next;
+    heap_next = idx;
+}
+
+function takeObject(idx) {
+    const ret = getObject(idx);
+    dropObject(idx);
+    return ret;
+}
+
 let cachedTextDecoder = new TextDecoder('utf-8', { ignoreBOM: true, fatal: true });
 
 cachedTextDecoder.decode();
@@ -105,6 +105,19 @@ cachedTextDecoder.decode();
 function getStringFromWasm0(ptr, len) {
     return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
 }
+/**
+* @param {string} a
+* @param {string} b
+* @returns {boolean}
+*/
+module.exports.powierza = function(a, b) {
+    const ptr0 = passStringToWasm0(a, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ptr1 = passStringToWasm0(b, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len1 = WASM_VECTOR_LEN;
+    const ret = wasm.powierza(ptr0, len0, ptr1, len1);
+    return ret !== 0;
+};
 
 function logError(f, args) {
     try {
@@ -275,14 +288,6 @@ module.exports.decode_ncrs = function(text) {
     }
 };
 
-module.exports.__wbindgen_object_drop_ref = function(arg0) {
-    takeObject(arg0);
-};
-
-module.exports.__wbg_alert_70723587b84ca935 = function() { return logError(function (arg0, arg1) {
-    alert(getStringFromWasm0(arg0, arg1));
-}, arguments) };
-
 module.exports.__wbindgen_json_serialize = function(arg0, arg1) {
     const obj = getObject(arg1);
     const ret = JSON.stringify(obj === undefined ? null : obj);
@@ -291,6 +296,14 @@ module.exports.__wbindgen_json_serialize = function(arg0, arg1) {
     getInt32Memory0()[arg0 / 4 + 1] = len0;
     getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
+
+module.exports.__wbindgen_object_drop_ref = function(arg0) {
+    takeObject(arg0);
+};
+
+module.exports.__wbg_alert_70723587b84ca935 = function() { return logError(function (arg0, arg1) {
+    alert(getStringFromWasm0(arg0, arg1));
+}, arguments) };
 
 module.exports.__wbindgen_throw = function(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));

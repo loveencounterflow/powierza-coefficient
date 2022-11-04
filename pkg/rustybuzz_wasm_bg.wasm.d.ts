@@ -1,6 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
+export function powierza(a: number, b: number, c: number, d: number): number;
 export function register_font(a: number, b: number, c: number): void;
 export function font_register_is_free(a: number): number;
 export function shape_text(a: number, b: number): void;
